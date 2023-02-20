@@ -1,0 +1,16 @@
+/* .full-width{
+    width: 80%;
+} */
+
+.cont_s{
+    /* max-width: 600px;
+    max-height: 600px; */
+    margin: 2em auto;
+    text-align: center;
+}
+.header{
+    text-align: center;
+}
+.full-width{
+    width: 250px;
+}

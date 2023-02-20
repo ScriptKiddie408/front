@@ -1,0 +1,50 @@
+<div class="dia_clas">
+    <mat-card-content class="cont_s">
+        <div class="header"><h1>Назначние диагноза</h1></div>
+        <div class="form_group">
+            <form [formGroup]="diagForm" novalidate >
+                <div>
+                    <mat-form-field class="full-width">
+                        <mat-select placeholder="Основной диагноз" formControlName="diagnosis">
+                        <mat-option *ngFor="let statesDp of statesDp" [value]="statesDp.nameDp">
+                            {{ statesDp.nameDp }}
+                        </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="diagForm.controls['diagnosis'].hasError('required')">
+                        Заполните поле <strong>Основной диагноз</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                <mat-form-field class="full-width">
+                    <mat-select placeholder="Осложнения основного диагноза" formControlName="complications_diagnosis">
+                    <mat-option *ngFor="let statesDc1 of statesDc1" [value]="statesDc1.nameDc">
+                        {{ statesDc1.nameDc }}
+                    </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="diagForm.controls['diagnosis'].hasError('required')">
+                    Заполните поле <strong>Осложнения основного диагноза  </strong>
+                    </mat-error>
+                </mat-form-field>
+                </div>
+                <div >
+                <mat-form-field class="full-width">
+                    <mat-select placeholder="Сопутствующие заболевания" formControlName="concomitant_diseases">
+                    <mat-option *ngFor="let statesDc1 of statesDc1" [value]="statesDc1.nameDc">
+                        {{ statesDc1.nameDc }}
+                    </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="diagForm.controls['diagnosis'].hasError('required')">
+                        Заполните поле <strong>Сопутствующие заболевания</strong>
+                    </mat-error>
+                </mat-form-field>
+                </div>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" type="submit">Сохранить</button>
+                    &nbsp;
+                    <button mat-raised-button color="primary" type="submit" (click)="CloseClick()">Закрыть</button>
+                </mat-card-actions>
+            </form>
+        </div>
+    </mat-card-content>
+</div>

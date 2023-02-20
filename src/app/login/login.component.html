@@ -1,0 +1,25 @@
+<div class="b-collor">
+    <mat-card>
+        <mat-card-content>
+            <div class="header">
+                <h1>Login</h1>
+            </div>
+            <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+                <div class="email-input">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput required />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="password" matInput required />
+                    </mat-form-field>
+                </div>
+                <button mat-flat-button color="primary" routerLink="home/results_research">Login</button>
+            </form>
+            <router-outlet></router-outlet>
+        </mat-card-content>
+    </mat-card>
+</div>

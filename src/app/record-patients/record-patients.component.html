@@ -1,0 +1,87 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-title>Форма записи</mat-card-title>
+    <mat-card-header>
+
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Фамилия" id="surname">
+            <mat-error *ngIf="addressForm.controls['surname'].hasError('required')">
+              Заполните поле <strong>Фамилия</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Имя" id="name">
+            <!-- <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+              Заполните поле <strong>Имя</strong>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Отчество" id="patronymic">
+            <!-- <mat-error *ngIf="addressForm.controls['patronymic'].hasError('required')">
+              Заполните поле <strong>Отчество</strong>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Снилс" id="snils">
+            <!-- <mat-error *ngIf="addressForm.controls['snils'].hasError('required')">
+              Заполните поле <strong>Снилс</strong>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <!-- <input matInput [matDatepicker]="date_of_birth" placeholder="Дата рождения" id="date_of_birth">
+            <mat-datepicker-toggle matSuffix [for]="date_of_birth"></mat-datepicker-toggle>
+            <mat-datepicker #date_of_birth></mat-datepicker> -->
+            <input matInput placeholder="Дата рождения" id="date_of_birth">
+            <!-- <mat-error *ngIf="addressForm.controls['date_of_birth'].hasError('required')">
+              Заполните поле <strong>Дата рождения</strong>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Пол" id="gender">
+              <mat-option *ngFor="let state of states" [value]="state.nameG">
+                {{ state.nameG }}
+              </mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="addressForm.controls['gender'].hasError('required')">
+              Заполните поле <strong>Пол</strong>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="row">
+        <h2>Назначенные исследования</h2>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Назначенные исследования" formControlName="researches">
+            <!-- <mat-error *ngIf="addressForm.controls['researches'].hasError('required')">
+              Заполните поле <strong>Назначенные исследования</strong>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <input type="button" value="Добавить" ng-click="getPat()"> -->
+      <button mat-raised-button color="primary" type="button" (click)="getPat()">Добавить</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
